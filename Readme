@@ -1,0 +1,83 @@
+# front-end - Vue.js
+# server/ back-end Node.js and Express
+# store data in MongoDB
+# host on a platform
+
+Vue.js allows you to create more performant, maintainable sites faster by using modular, reusable components
+
+## globally install Vue CLI:
+npm install -g @vue/cli
+
+## create new Vue project
+vue create front-end
+
+## run it:
+cd front-end
+npm run serve
+
+## install Vue router version 4 ( to create links & routing within the App)
+npm install vue-router@4
+
+## for back-end - init a new package
+npm init -y
+npm install express
+
+## babel - library - JS sintax
+npm install --save-dev @babel/core @babel/node @babel/preset-env @babel/plugin-transform-runtime @babel/cli
+npm install @babel/runtime
+
+## run the back-end server:
+npx babel-node src/server.js
+
+## use Node deamon in order not to restart the server any time we make a change
+npm install -- save-dev nodemon  
+& run
+npx nodemon --exec npx babel-node src/server.js
+OR shorter - add the command in package.json:
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx nodemon --exec npx babel-node src/server.js"
+  },
+
+## and run it in the terminal:
+npm run dev
+
+## MongoDB
+irinaprisacariu / bP73aOK0mKG4zTbp
+mongodb+srv://irinaprisacariu:bP73aOK0mKG4zTbp@cluster0.aseab0y.mongodb.net/
+
+- in mongoDB shel:
+use shop-db
+db.products.insertMany([arr])
+db.users.insertOne({id: '1234', cartItems: ['123', '345']})
+- see all items:
+db.products.find({})
+
+
+## connect server to mongoDB
+npm install mongodb
+
+
+## Axios Library - connect front & back ends
+### front-end will make a request for our back-end
+### Axios is a library that makes the front-end requests
+axios.get('url')
+
+### it returns promisses
+const response = await axios.get(...);
+response.data // the res.json data we set in the back-end
+
+.post('url', {
+    a: b
+})
+.put()
+.delete()
+
+## in the front-end - install axios:
+npm install axios
+
+## make parts of the app use axios (products page .....):
+
+
+## use google Firebase console to authenticate without having to build it
+https://console.firebase.google.com/
